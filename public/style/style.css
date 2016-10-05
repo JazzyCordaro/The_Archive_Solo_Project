@@ -1,0 +1,25 @@
+body{
+  font-family: 'Quicksand', sans-serif;
+  background: #8E0E00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+#mainPage {
+  text-align: center;
+  /*background-color: white;*/
+  color: black;
+  border: 3px solid;
+  border-color: black;
+  margin: 20px;
+
+background: #ECE9E6; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#quote {
+  text-align: center;
+}
