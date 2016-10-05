@@ -25,9 +25,23 @@ background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, F
 }
 
 #searchNewMovie {
-  margin-left: 950px;
+  /*margin-left: 950px;*/
+  align-items: flex-start;
+
 }
 
 #welcomeUser{
-  color: white;
+  align-items: flex-start;
+  color: black;
+  border: 3px solid;
+  border-color: black;
+  margin: 20px;
+  background: #ECE9E6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.allButtons:hover{
+  background-color: darkred;
+color: white;
 }

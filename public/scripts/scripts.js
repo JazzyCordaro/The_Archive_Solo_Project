@@ -46,6 +46,7 @@ var showMovies = function( results ){
   for( var i = 0 ; i < results.length; i++ ){
     $( '#outputDiv').append( '<p>' + results[ i ].Title + '</p>' );
     $( '#outputDiv').append( '<img src="' + results[ i ].Poster + '">' );
+    $('#outputDiv').append('<p>' + '<button>Add</button>' + '</p>');
       }
     };
   });
