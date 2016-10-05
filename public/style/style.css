@@ -23,3 +23,11 @@ background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, F
 #quote {
   text-align: center;
 }
+
+#searchNewMovie {
+  margin-left: 950px;
+}
+
+#welcomeUser{
+  color: white;
+}
