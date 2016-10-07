@@ -1,64 +1,117 @@
 console.log('scripts.js is sourced');
 
-var showMovies = [];
+var movie = [];
 
-// hide and show of user screen
 $(document).ready(function(){
    console.log('doc ready JQ');
-   $("#userLoggedIn").hide();
- 	$("#login").click(function(){
- 		console.log("login button clicked");
- 	$("#userLoggedIn").show();
- 	$("#login").hide();
- 	});
+
+   getMovies();
+
+$('body').on('click', '#addButton', function(){
+  console.log('addButton clicked');
+
+  var objectToSend = {
+    title: $('#searchTitle').val(),
+    url: 'test',
+    userid: 123456
+  };
+
+  saveMovie(objectToSend);
+}); //end body on click
+
+// hide and show of user screen
+$("#userLoggedIn").hide();
+  $("#login").click(function(){
+    console.log("login button clicked");
+    $("#userLoggedIn").show();
+    $("#login").hide();
+  }); // end login button click
 
 $(document).on('click', '#searchNew',  function(){
-// search library click
-   $( "#searchLibrary" ).click(function() {
-    console.log('search library clicked');
-});
+  var searchNewMovie = $('#searchTitle').val();
+  console.log('searching for:', searchNewMovie);
+
+  var searchURL = 'http://www.omdbapi.com/?s=' + searchNewMovie;
+  $.ajax({
+    url: searchURL,
+    dataType: "JSON",
+    success: function(data){
+      console.log('successful API hit:', data);
+      showMovies(data.Search);
+    }
+  }); // end ajax call
+}); // end search new click
+
+$( "#searchLibrary" ).click(function() {
+  console.log('search library clicked');
+}); // end searchLibrary click
+
 
 // search new movie click
-   $( "#searchNewMovie" ).click(function() {
-    console.log('search new movie clicked');
-});
+$( "#searchNewMovie" ).click(function() {
+  console.log('search new movie clicked');
+}); // end searchNewMovie click
+
+    // add movie click
+$("#addButton").click(function(){
+  console.log('add button clicked');
+      // $(this) refer to specific button
+}); // end addButton click
+
+  var showMovies = function( results ){
+    console.log( 'in showMovies', results );
+    // empty output div
+    $( '#outputDiv').empty();
+    // loop through results and display movies
+    for( var i = 0 ; i < results.length; i++ ){
+      $( '#outputDiv').append( '<p>' + results[ i ].Title + '</p>' );
+      $( '#outputDiv').append( '<img src="' + results[ i ].Poster + '">' );
+      // store results[i] in button
+      $('#outputDiv').append('<p>' + '<button type="button" id="addButton">Add</button>' + '</p>');
+    } //end for loop
+  }; //end showMovies
+}); // end doc ready
+
+var getMovies = function(){
+  console.log( 'in getMovies' );
+  // ajax call to server to get movies
+  $.ajax({
+    url: '/getMovies',
+    type: 'GET',
+    success: function( data ){
+      console.log( 'got some movies: ', data );
+      movie = data;
+      appendMovies();
+    } // end success
+  }); //end ajax
+};
+
+var saveMovie = function(objectToSend){
+  console.log( 'in saveMovie' );
+  // ajax call to server to get movies
+  $.ajax({
+    url: '/addMovie',
+    type: 'POST',
+    dataType: 'JSON',
+    data: objectToSend,
+    success: function( data ){
+      console.log( 'got some movies: ', data );
+      movie = data;
+      appendMovies();
+    } // end success
+  }); //end ajax
+};
 
 
-var searchNewMovie = $('#searchTitle').val();
-console.log('searching for:', searchNewMovie);
 
-var searchURL = 'http://www.omdbapi.com/?s=' + searchNewMovie;
 
-$.ajax({
-  url: searchURL,
-  dataType: "JSON",
-  success: function(data){
-    console.log('successful API hit:', data);
-    showMovies(data.Search);
-  }
-});
-
-var showMovies = function( results ){
-  console.log( 'in showMovies', results );
-  // empty output div
-  $( '#outputDiv').empty();
-  // loop through results and display movies
-  for( var i = 0 ; i < results.length; i++ ){
-    $( '#outputDiv').append( '<p>' + results[ i ].Title + '</p>' );
-    $( '#outputDiv').append( '<img src="' + results[ i ].Poster + '">' );
-    $('#outputDiv').append('<p>' + '<button>Add</button>' + '</p>');
-      }
-    };
-  });
-});
-
-var objectToSend = {};
-
-$.ajax({
-  type: 'POST',
-  url: '/test',
-  data: objectToSend,
-  success: function( data ){
-    console.log( 'got this from server - ' + data );
-    } // end ajax success
-  });
+// var objectToSend = {};
+//
+// $.ajax({
+//   type: 'POST',
+//   url: '/test',
+//   data: objectToSend,
+//   success: function( data ){
+//     console.log( 'got this from server - ' + data );
+//     } // end ajax success
+//   });
