@@ -1,62 +1,55 @@
 console.log('scripts.js is sourced');
 
-var movie = [];
+// var movie = [];
 
 $(document).ready(function(){
    console.log('doc ready JQ');
 
    getMovies();
 
-$('body').on('click', '#addButton', function(){
-  console.log('addButton clicked');
+  $('body').on('click', '#addButton', function(){
+    var title = $(this).attr('title');
+    console.log('title', title);
+    console.log('addButton clicked');
+    //this
 
-  var objectToSend = {
-    title: $('#searchTitle').val(),
+    var objectToSend = {
+    title: title,
     url: 'test',
     userid: 123456
-  };
+    };
 
-  saveMovie(objectToSend);
-}); //end body on click
+    saveMovie(objectToSend);
+  }); //end body on click
 
-// hide and show of user screen
-$("#userLoggedIn").hide();
+  // hide and show of user screen
+  $("#userLoggedIn").hide();
   $("#login").click(function(){
     console.log("login button clicked");
     $("#userLoggedIn").show();
     $("#login").hide();
   }); // end login button click
 
-$(document).on('click', '#searchNew',  function(){
-  var searchNewMovie = $('#searchTitle').val();
-  console.log('searching for:', searchNewMovie);
+  $(document).on('click', '#searchNew',  function(){
+    var searchNewMovie = $('#searchTitle').val();
+    console.log('searching for:', searchNewMovie);
+
 
   var searchURL = 'http://www.omdbapi.com/?s=' + searchNewMovie;
-  $.ajax({
-    url: searchURL,
-    dataType: "JSON",
-    success: function(data){
+    $.ajax({
+      url: searchURL,
+      dataType: "JSON",
+      success: function(data){
       console.log('successful API hit:', data);
       showMovies(data.Search);
-    }
-  }); // end ajax call
-}); // end search new click
+      }
+    }); // end ajax call
+  }); // end search new click
 
-$( "#searchLibrary" ).click(function() {
-  console.log('search library clicked');
-}); // end searchLibrary click
+  $( "#searchLibrary" ).click(function() {
+    console.log('search library clicked');
+  }); // end searchLibrary click
 
-
-// search new movie click
-$( "#searchNewMovie" ).click(function() {
-  console.log('search new movie clicked');
-}); // end searchNewMovie click
-
-    // add movie click
-$("#addButton").click(function(){
-  console.log('add button clicked');
-      // $(this) refer to specific button
-}); // end addButton click
 
   var showMovies = function( results ){
     console.log( 'in showMovies', results );
@@ -67,10 +60,36 @@ $("#addButton").click(function(){
       $( '#outputDiv').append( '<p>' + results[ i ].Title + '</p>' );
       $( '#outputDiv').append( '<img src="' + results[ i ].Poster + '">' );
       // store results[i] in button
-      $('#outputDiv').append('<p>' + '<button type="button" id="addButton">Add</button>' + '</p>');
+      $('#outputDiv').append('<p>' + '<button type="button" class="allButtons" id="addButton" title="' + results[ i ].Title + '">Add</button>' + '</p>');
     } //end for loop
   }; //end showMovies
+
+
+
+
+
+
+    // trying to display movies in library
+  var showLibrary = function( results ){
+    console.log( 'in showLibrary', results );
+    // empty output div
+    $( '#libraryOutputDiv').empty();
+    // loop through results and display movies
+    for( var i = 0 ; i < results.length; i++ ){
+      $( '#libraryOutputDiv').append( '<p>' + results[ i ].Title + '</p>' );
+      $( '#libraryOutputDiv').append( '<img src="' + results[ i ].Poster + '">' );
+      // store results[i] in button
+      // $('#outputDiv').append('<p>' + '<button type="button" class="allButtons" id="addButton">Add</button>' + '</p>');
+    } //end for loop
+  }; //end showMovies
+
+
+
+
 }); // end doc ready
+
+
+
 
 var getMovies = function(){
   console.log( 'in getMovies' );
@@ -81,7 +100,7 @@ var getMovies = function(){
     success: function( data ){
       console.log( 'got some movies: ', data );
       movie = data;
-      appendMovies();
+      // appendMovies();
     } // end success
   }); //end ajax
 };
@@ -97,21 +116,25 @@ var saveMovie = function(objectToSend){
     success: function( data ){
       console.log( 'got some movies: ', data );
       movie = data;
-      appendMovies();
+      // appendMovies();
     } // end success
   }); //end ajax
-};
+};//end saveMovie
 
 
 
-
-// var objectToSend = {};
-//
-// $.ajax({
-//   type: 'POST',
-//   url: '/test',
-//   data: objectToSend,
-//   success: function( data ){
-//     console.log( 'got this from server - ' + data );
-//     } // end ajax success
+/////????????????????
+// var addToLibrary = function(){
+//   console.log('in addToLibrary');
+//   $.ajax({
+//     url: '/saveMoive',
+//     type: 'POST',
+//     dataType: 'JSON',
+//     data: objectToSend,
+//     success: function(data){
+//       console.log('saved from:', data);
+//       movie = data;
+//       appendMovies();
+//     }
 //   });
+// };
