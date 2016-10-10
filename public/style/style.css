@@ -7,7 +7,6 @@ body{
 
 #mainPage {
   text-align: center;
-  /*background-color: white;*/
   color: black;
   border: 3px solid;
   border-color: black;
@@ -23,7 +22,6 @@ body{
 
 #welcomeUser{
   text-align: center;
-  /*background-color: white;*/
   color: black;
   border: 3px solid;
   border-color: black;
@@ -35,25 +33,39 @@ body{
 
 .allButtons:hover{
   background-color: darkred;
-color: white;
-}
-
-#outputDiv {
-  float: right;
-  padding: 10px;
-}
-
-#libraryOutputDiv {
-  float: left;
-  padding: 10px;
+  color: white;
 }
 
 #searchTitle, #searchNew{
   float: right;
-  padding: 10px;
+  margin-top: 30px;
 }
 
 #searchArchive {
   float: left;
+  margin-top: 30px;
+}
+
+#outputDiv {
+  float: right;
+  color: black;
   padding: 10px;
+  border: 3px solid;
+  border-color: black;
+  margin: 20px;
+  background: #ECE9E6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#libraryOutputDiv {
+  float: left;
+  color: black;
+  padding: 10px;
+  border: 3px solid;
+  border-color: black;
+  margin: 20px;
+  background: #ECE9E6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

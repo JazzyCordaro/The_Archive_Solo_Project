@@ -22,10 +22,10 @@ $(document).ready(function(){
 });
 
   // hide and show of user screen
-  $("#userLoggedIn").hide();
+  $("#welcomeUser").hide();
   $("#login").click(function(){
     console.log("login button clicked");
-    $("#userLoggedIn").show();
+    $("#welcomeUser").show();
     $("#login").hide();
   }); // end login button click
 
