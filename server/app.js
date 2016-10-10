@@ -69,4 +69,23 @@ app.post('/addMovie', urlencodedParser, function(req, res){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.use(express.static('public'));
