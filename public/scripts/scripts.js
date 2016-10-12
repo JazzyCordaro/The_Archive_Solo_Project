@@ -9,7 +9,7 @@ $(document).ready(function(){
     // 'this' send the actual title of the movie to the DB.
     var title = $(this).attr('title');
     var poster = $(this).attr('poster');
-    console.log('title', title);
+    console.log('title:', title);
     console.log('addButton clicked');
 
     var objectToSend = {
@@ -18,8 +18,7 @@ $(document).ready(function(){
     userid: 123456
     };
     saveMovie(objectToSend);
-  // }); //end body on click
-});
+}); // end $('body').on('click', '#addButton', function()
 
   // hide and show of user screen
   $("#welcomeUser").hide();
@@ -31,8 +30,9 @@ $(document).ready(function(){
 
   $(document).on('click', '#searchNew',  function(){
     var searchNewMovie = $('#searchTitle').val();
+    // clear new movie search
+    $('#searchTitle').val('');
     console.log('searching for:', searchNewMovie);
-
 
   var searchURL = 'http://www.omdbapi.com/?s=' + searchNewMovie;
     $.ajax({
@@ -45,7 +45,7 @@ $(document).ready(function(){
     }); // end ajax call
   }); // end search new click
 
-  $( "#searchLibrary" ).click(function() {
+  $("#searcyYourLibrary").click(function() {
     console.log('search library clicked');
   }); // end searchLibrary click
 
@@ -71,7 +71,6 @@ var showLibrary = function( results ){
   for( var i = 0 ; i < results.length; i++ ){
     $( '#libraryOutputDiv').append( '<p>' + results[ i ].title + '</p>' );
     $( '#libraryOutputDiv').append( '<img src="' + results[ i ].url + '">' );
-    // store results[i] in button
   } //end for loop
 }; //end showLibrary
 
@@ -82,7 +81,7 @@ var getMovies = function(){
     url: '/getMovies',
     type: 'GET',
     success: function( data ){
-      console.log( 'got some movies: ', data );
+      console.log( 'library got some movies: ', data );
       movie = data;
       showLibrary(data);
     } // end success
@@ -98,7 +97,7 @@ var saveMovie = function(objectToSend){
     dataType: 'JSON',
     data: objectToSend,
     success: function( data ){
-      console.log( 'got some movies:', data );
+      console.log( 'DB got some movies:', data );
       movie = data;
     } // end success
   }); //end ajax

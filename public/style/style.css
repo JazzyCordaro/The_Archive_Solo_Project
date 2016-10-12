@@ -36,17 +36,33 @@ body{
   color: white;
 }
 
+.allButtons{
+  margin: 10px;
+}
+
 #searchTitle, #searchNew{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   float: right;
   margin-top: 30px;
 }
 
-#searchArchive {
+#searcyYourLibrary, #searchArchive {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   float: left;
   margin-top: 30px;
 }
 
 #outputDiv {
+  display: -webkit-flex;
+  display: flex;
+ -webkit-flex-direction: column;
+  flex-direction: column;
   float: right;
   color: black;
   padding: 10px;
@@ -59,6 +75,10 @@ body{
 }
 
 #libraryOutputDiv {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   float: left;
   color: black;
   padding: 10px;

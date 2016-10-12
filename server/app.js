@@ -28,7 +28,7 @@ app.get('/getMovies', function(req, res){
     }else{
       console.log('connected to DB');
       var resultsArray = [];
-      var queryResults = client.query('SELECT * FROM movies');
+      var queryResults = client.query('SELECT * FROM movies ORDER BY title ASC');
       queryResults.on('row', function(row){
         resultsArray.push(row);
       });
@@ -44,7 +44,6 @@ app.get('/getMovies', function(req, res){
 // add movie
 app.post('/addMovie', urlencodedParser, function(req, res){
   console.log('addMovie route hit:', req.body);
-  // var result = [];
   var data = {title: req.body.title, url: req.body.url, userid: req.body.userid};
   pg.connect(connectionString, function(err, client, done){
     if(err){
@@ -54,38 +53,9 @@ app.post('/addMovie', urlencodedParser, function(req, res){
     } // end error connection
       // query to DB The Archive
       client.query("INSERT INTO movies(title, url, userid) values($1, $2, $3)", [data.title, data.url, data.userid]);
-      // var query = client.query('SELECT * FROM movies ORDER BY id LIMIT 1');
-      // query.on('row', function(row){
-      //   results.push(row);
-      // });
-      // query.on('end', function(){
         done();
           res.send({success: true});
-      // });
   }); // end pg connect
 }); // end post /addMovie
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 app.use(express.static('public'));

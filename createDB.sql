@@ -5,4 +5,6 @@ CREATE TABLE movies (
 	userID INT NOT NULL
 );
 
-INSERT INTO movies (title, url, userID) VALUES ('Silence of the Lambs', 'test', 12345);  
+INSERT INTO movies (title, url, userID) VALUES ('Silence of the Lambs', 'test', 12345);
+
+SELECT * FROM movies ORDER BY title ASC
