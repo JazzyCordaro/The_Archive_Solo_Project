@@ -52,10 +52,10 @@ $(document).ready(function(){
   var showMovies = function( results ){
     console.log( 'in showMovies', results );
     // empty output div
-    $( '#outputDiv').empty();
+    // $( '#outputDiv').empty();
     // loop through results and display movies
     for( var i = 0 ; i < results.length; i++ ){
-      $( '#outputDiv').append( '<p>' + results[ i ].Title + '</p>' );
+      $( '#outputDiv').append( '<p><h4>' + results[ i ].Title + '</h4></p>' );
       $( '#outputDiv').append( '<img src="' + results[ i ].Poster + '">' );
       // store results[i] in button
       $('#outputDiv').append('<p>' + '<button type="button" class="allButtons" id="addButton" title="' + results[ i ].Title + '" poster="' + results[ i ].Poster + '">Add</button>' + '</p>');
@@ -66,10 +66,10 @@ $(document).ready(function(){
 var showLibrary = function( results ){
   console.log( 'in showLibrary', results );
   // empty output div
-  $( '#libraryOutputDiv').empty();
+  // $( '#libraryOutputDiv').empty();
   // loop through results and display movies
   for( var i = 0 ; i < results.length; i++ ){
-    $( '#libraryOutputDiv').append( '<p>' + results[ i ].title + '</p>' );
+    $( '#libraryOutputDiv').append( '<p><h4>' + results[ i ].title + '</h4></p>' );
     $( '#libraryOutputDiv').append( '<img src="' + results[ i ].url + '">' );
   } //end for loop
 }; //end showLibrary
