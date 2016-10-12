@@ -18,6 +18,7 @@ $(document).ready(function(){
     userid: 123456
     };
     saveMovie(objectToSend);
+    getMovies();
 }); // end $('body').on('click', '#addButton', function()
 
   // hide and show of user screen
@@ -49,14 +50,10 @@ $(document).ready(function(){
     }); // end ajax call
   }); // end search new click
 
-  $("#searcyYourLibrary").click(function() {
-    console.log('search library clicked');
-  }); // end searchLibrary click
-
   var showMovies = function( results ){
     console.log( 'in showMovies', results );
     // empty output div
-    // $( '#outputDiv').empty();
+    $( '#outputDiv').empty();
     // loop through results and display movies
     for( var i = 0 ; i < results.length; i++ ){
       $( '#outputDiv').append( '<p><h4>' + results[ i ].Title + '</h4></p>' );
@@ -70,7 +67,7 @@ $(document).ready(function(){
 var showLibrary = function( results ){
   console.log( 'in showLibrary', results );
   // empty output div
-  // $( '#libraryOutputDiv').empty();
+  $( '#libraryOutputDiv').empty();
   // loop through results and display movies
   for( var i = 0 ; i < results.length; i++ ){
     $( '#libraryOutputDiv').append( '<p><h4>' + results[ i ].title + '</h4></p>' );
@@ -86,7 +83,7 @@ var getMovies = function(){
     type: 'GET',
     success: function( data ){
       console.log( 'library got some movies: ', data );
-      movie = data;
+      // movie = data;
       showLibrary(data);
     } // end success
   }); //end ajax
