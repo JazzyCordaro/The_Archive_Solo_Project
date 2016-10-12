@@ -1,19 +1,27 @@
-body{
+
+
+
+body {
   font-family: 'Quicksand', sans-serif;
-  background: #8E0E00; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url('../redcurtins.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
+
+
 
 #mainPage {
   text-align: center;
-  color: black;
+  color: white;
   border: 3px solid;
   border-color: black;
   margin: 20px;
-  background: #ECE9E6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #8E0E00; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #quote {
@@ -22,25 +30,30 @@ body{
 
 #welcomeUser{
   text-align: center;
-  color: black;
+  color: white;
   border: 3px solid;
   border-color: black;
   margin: 20px;
-  background: #ECE9E6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #8E0E00; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .allButtons:hover{
   background-color: darkred;
-  color: white;
+  color: black;
 }
 
 .allButtons{
   margin: 10px;
+  color: black;
+  border-color: white;
+
 }
 
 #searchTitle, #searchNew{
+  color: black;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -49,13 +62,8 @@ body{
   margin-top: 30px;
 }
 
-#searcyYourLibrary, #searchArchive {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  float: left;
-  margin-top: 30px;
+#userName, #password{
+  color: black;
 }
 
 #outputDiv {
@@ -64,14 +72,15 @@ body{
  -webkit-flex-direction: column;
   flex-direction: column;
   float: right;
-  color: black;
+  color: white;
   padding: 10px;
   border: 3px solid;
   border-color: black;
   margin: 20px;
-  background: #ECE9E6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #8E0E00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #libraryOutputDiv {
@@ -80,12 +89,12 @@ body{
   -webkit-flex-direction: column;
   flex-direction: column;
   float: left;
-  color: black;
+  color: white;
   padding: 10px;
   border: 3px solid;
   border-color: black;
   margin: 20px;
-  background: #ECE9E6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #8E0E00; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

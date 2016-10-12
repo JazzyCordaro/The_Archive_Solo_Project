@@ -22,10 +22,14 @@ $(document).ready(function(){
 
   // hide and show of user screen
   $("#welcomeUser").hide();
-  $("#login").click(function(){
+  $('#logoutButton').hide();
+  $("#loginButton").click(function(){
     console.log("login button clicked");
-    $("#welcomeUser").show();
-    $("#login").hide();
+  $('#logoutButton').show();
+  $("#welcomeUser").show();
+  $("#loginButton").hide();
+  $('#userName').hide();
+  $('#password').hide();
   }); // end login button click
 
   $(document).on('click', '#searchNew',  function(){
