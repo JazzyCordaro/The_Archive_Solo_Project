@@ -1,8 +1,5 @@
-
-
-
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Pontano Sans', sans-serif;
   background-image: url('../redcurtins.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -10,34 +7,30 @@ body {
   background-size: 100% 100%;
 }
 
-
+#searchNewMovie{
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  color: white;
+  margin-right: 20px;
+}
 
 #mainPage {
   text-align: center;
+  min-height: 160px;
   color: white;
   border: 3px solid;
   border-color: black;
   margin: 20px;
   background: #8E0E00; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #quote {
   text-align: center;
-}
-
-#welcomeUser{
-  text-align: center;
-  color: white;
-  border: 3px solid;
-  border-color: black;
-  margin: 20px;
-  background: #8E0E00; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  font-family: 'Coming Soon', cursive;
 }
 
 .allButtons:hover{
@@ -49,52 +42,60 @@ background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, F
   margin: 10px;
   color: black;
   border-color: white;
+}
 
+#libraryArchive{
+  min-height: 400%;
+  /*margin: 20px;*/
+  margin: auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: row;
+  float: left;
+  color: white;
+  padding: 10px;
+  border: 3px solid;
+  border-color: black;
+  background: #8E0E00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#search{
+  min-height: 400%;
+  margin: 20px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: row;
+  float: right;
+  color: white;
+  padding: 10px;
+  border: 3px solid;
+  border-color: black;
+  background: #8E0E00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #searchTitle, #searchNew{
   color: black;
   display: -webkit-flex;
   display: flex;
+  margin-right: 20px;
   -webkit-flex-direction: column;
   flex-direction: column;
   float: right;
   margin-top: 30px;
 }
 
-#userName, #password{
-  color: black;
-}
 
-#outputDiv {
-  display: -webkit-flex;
+#library{
+  align-self: center;
   display: flex;
- -webkit-flex-direction: column;
-  flex-direction: column;
-  float: right;
-  color: white;
-  padding: 10px;
-  border: 3px solid;
-  border-color: black;
-  margin: 20px;
-  background: #8E0E00; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-
-#libraryOutputDiv {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
   flex-direction: column;
   float: left;
   color: white;
-  padding: 10px;
-  border: 3px solid;
-  border-color: black;
-  margin: 20px;
-  background: #8E0E00; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #8E0E00 , #1F1C18); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #8E0E00 , #1F1C18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-right: 20px;
 }

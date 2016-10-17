@@ -3,6 +3,7 @@ console.log('scripts.js is sourced');
 $(document).ready(function(){
    console.log('doc ready JQ');
 
+
    getMovies();
 
   $('body').on('click', '#addButton', function(){
@@ -21,17 +22,37 @@ $(document).ready(function(){
     getMovies();
 }); // end $('body').on('click', '#addButton', function()
 
-  // hide and show of user screen
-  $("#welcomeUser").hide();
-  $('#logoutButton').hide();
-  $("#loginButton").click(function(){
-    console.log("login button clicked");
-  $('#logoutButton').show();
-  $("#welcomeUser").show();
-  $("#loginButton").hide();
-  $('#userName').hide();
-  $('#password').hide();
-  }); // end login button click
+// var lock = new Auth0Lock( 'qxFfdrj7POhBrAyn0daFWcsSfy8KI85O', 'jazzycordaro.auth0.com');
+// // log out url, from Auth0
+// var logOutUrl = 'https://YOURAUTH0SUBDOMAIN.auth0.com/v2/logout';
+
+
+//
+// $(document).on('click', '#login', function(){
+// if (err) {
+//         console.error( "auth error: ", err);
+//       } // end error
+//       else {
+//         // save token to localStorage
+//         localStorage.setItem( 'userToken', token );
+//         console.log( 'token:', token );
+//         // save user profile to localStorage
+//         localStorage.setItem( 'userProfile', JSON.stringify( profile ) );
+//         console.log( 'profile:', profile );
+//       } // end no error
+// }
+
+  // // hide and show of user screen
+  // $("#library").hide();
+  // $('#logoutButton').hide();
+  // $("#loginButton").click(function(){
+  //   console.log("login button clicked");
+  // $('#logoutButton').show();
+  // $("#library").show();
+  // $("#loginButton").hide();
+  // $('#userName').hide();
+  // $('#password').hide();
+  // }); // end login button click
 
   $(document).on('click', '#searchNew',  function(){
     var searchNewMovie = $('#searchTitle').val();
