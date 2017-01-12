@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="vendors/bootstrap.min.css" media="screen" title="no title">
       <script src="../vendors/jquery-3.1.0.min.js" charset="utf-8"></script>
-
-
-
       <script src="https://cdn.auth0.com/js/lock-8.1.min.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <script src="vendors/angular.min.js" charset="utf-8"></script>
       <script src="scripts/authExample.js" charset="utf-8"></script>
-
-
       <!-- <script src="vendors/angular.min.js" charset="utf-8"></script>
       <script src="vendors/angular-route.min.js" charset="utf-8"></script> -->
       <script src="../scripts/scripts.js" charset="utf-8"></script>
@@ -24,14 +19,9 @@
       <title>The Archive: Solo Project</title>
   </head>
   <body>
+  <div class = 'container'>
     <div id='mainPage'>
        <h1>The Archive...</h1>
-         <!-- <div id='login'>
-           <input type="text" name="name" placeholder="Username" id='userName'>
-           <input type="text" name="name" placeholder="Password" id='password'>
-           <button type="button" name="button" class="allButtons" id='loginButton'>Login</button>
-           <button type="button" id='logoutButton' class='allButtons'>Log Out</button>
-         </div> -->
 
      <div id='quote'>
       <h4><p>“Because we all need to believe in movies, sometimes.”</p></h4>
@@ -40,20 +30,26 @@
     </div>
 
     <div id='library' >
-      <div id='libraryArchive'><h4><u>My Library</u></h4></div>
-      <div id='libraryOutputDiv' class="col-xs-2"></div>
+
+      <div class='col-xs-6'>
+        <div id='libraryArchive'><h4>My Library</h4></div>
+        <div id='libraryOutputDiv' class="col-xs-2"></div>
+      </div>
     </div>
 
 
     <div id='searchNewMovie'>
             <!-- search for the user to add movies to library -->
+    <div class='col-xs-6'>
+      <div id='search'><h4>Search for something new</h4></div>
       <div class='searchBar'>
         <input type="text" id="searchTitle" placeholder="Search for new movie">
         <button type="button" name="button" class="allButtons" id="searchNew">Search</button>
      </div>
-        <div id='search'><h4><u>Search for something new</u></h4></div>
         <div id='outputDiv'></div>
     </div>
+    </div>
       <!-- </div> -->
+  </div>
   </body>
 </html>

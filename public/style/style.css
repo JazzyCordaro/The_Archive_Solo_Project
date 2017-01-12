@@ -9,9 +9,9 @@ body {
 
 #searchNewMovie{
   align-self: center;
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  float: right;
+  float: right;*/
   color: white;
   margin-right: 20px;
 }
@@ -45,16 +45,16 @@ body {
 }
 
 #libraryArchive{
-  min-height: 400%;
+  /*min-height: 400%;*/
   /*margin: 20px;*/
-  margin: auto;
-  display: -webkit-flex;
+  /*margin: auto;*/
+  /*display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
-  flex-direction: row;
-  float: left;
+  flex-direction: row;*/
+  /*float: left;*/
   color: white;
-  padding: 10px;
+  padding-left: 10px;
   border: 3px solid;
   border-color: black;
   background: #8E0E00; /* fallback for old browsers */
@@ -63,15 +63,15 @@ body {
 }
 
 #search{
-  min-height: 400%;
+  /*min-height: 400%;
   margin: 20px;
-  display: -webkit-flex;
+  /*display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
-  flex-direction: row;
-  float: right;
+  flex-direction: row;*/
+  /*float: right;*/
   color: white;
-  padding: 10px;
+  padding-left: 10px;
   border: 3px solid;
   border-color: black;
   background: #8E0E00; /* fallback for old browsers */
@@ -81,21 +81,21 @@ body {
 
 #searchTitle, #searchNew{
   color: black;
-  display: -webkit-flex;
+  /*display: -webkit-flex;
   display: flex;
   margin-right: 20px;
   -webkit-flex-direction: column;
   flex-direction: column;
-  float: right;
+  /*float: right;*/*/
   margin-top: 30px;
 }
 
 
 #library{
   align-self: center;
-  display: flex;
-  flex-direction: column;
-  float: left;
+  /*display: flex;
+  flex-direction: column;*/
+  /*float: left;*/
   color: white;
   margin-right: 20px;
 }

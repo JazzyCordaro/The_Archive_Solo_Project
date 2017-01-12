@@ -22,38 +22,6 @@ $(document).ready(function(){
     getMovies();
 }); // end $('body').on('click', '#addButton', function()
 
-// var lock = new Auth0Lock( 'qxFfdrj7POhBrAyn0daFWcsSfy8KI85O', 'jazzycordaro.auth0.com');
-// // log out url, from Auth0
-// var logOutUrl = 'https://YOURAUTH0SUBDOMAIN.auth0.com/v2/logout';
-
-
-//
-// $(document).on('click', '#login', function(){
-// if (err) {
-//         console.error( "auth error: ", err);
-//       } // end error
-//       else {
-//         // save token to localStorage
-//         localStorage.setItem( 'userToken', token );
-//         console.log( 'token:', token );
-//         // save user profile to localStorage
-//         localStorage.setItem( 'userProfile', JSON.stringify( profile ) );
-//         console.log( 'profile:', profile );
-//       } // end no error
-// }
-
-  // // hide and show of user screen
-  // $("#library").hide();
-  // $('#logoutButton').hide();
-  // $("#loginButton").click(function(){
-  //   console.log("login button clicked");
-  // $('#logoutButton').show();
-  // $("#library").show();
-  // $("#loginButton").hide();
-  // $('#userName').hide();
-  // $('#password').hide();
-  // }); // end login button click
-
   $(document).on('click', '#searchNew',  function(){
     var searchNewMovie = $('#searchTitle').val();
     // clear new movie search
@@ -78,7 +46,7 @@ $(document).ready(function(){
     // loop through results and display movies
     for( var i = 0 ; i < results.length; i++ ){
       $( '#outputDiv').append( '<p><h4>' + results[ i ].Title + '</h4></p>' );
-      $( '#outputDiv').append( '<img src="' + results[ i ].Poster + '">' );
+      $( '#outputDiv').append( '<img src="' + results[ i ].Poster + '">');
       // store results[i] in button
       $('#outputDiv').append('<p>' + '<button type="button" class="allButtons" id="addButton" title="' + results[ i ].Title + '" poster="' + results[ i ].Poster + '">Add</button>' + '</p>');
     } //end for loop
